@@ -31,8 +31,9 @@ class Refrapick(Tk):
 
         frame_toolbar = Frame(self)
         frame_toolbar.grid(row=0,column=0,sticky="WE")
-        
-        self.iconbitmap("%s/images/ico_refrapy.ico"%getcwd())
+
+        icon = PhotoImage("%s/images/ico_refrapy.ico"%getcwd())
+        self.iconphoto(False,icon)
         photo = PhotoImage(file="%s/images/ico_refrapy.gif"%getcwd())
         labelPhoto = Label(frame_toolbar, image = photo, width = 151)
         labelPhoto.image = photo
