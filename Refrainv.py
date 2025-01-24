@@ -31,8 +31,9 @@ class Refrainv(Tk):
         self.geometry("1600x900")
         self.title('Refrapy - Refrainv v2.0.0')
         self.configure(bg = "#F0F0F0")
-        self.resizable(0,0)
-        self.iconbitmap("%s/images/ico_refrapy.ico"%getcwd())
+        self.resizable(0,0)        
+        icon = PhotoImage("%s/images/ico_refrapy.ico"%getcwd())
+        self.iconphoto(False,icon)
 
         frame_toolbar = Frame(self)
         frame_toolbar.grid(row=0,column=0,sticky="EW")
