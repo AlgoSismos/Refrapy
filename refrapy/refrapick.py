@@ -13,7 +13,7 @@ from obspy import read
 from obspy.signal.filter import lowpass, highpass
 from scipy.signal import resample
 from scipy.interpolate import interp1d
-from numpy import array, where, polyfit, isclose
+from numpy import array, polyfit, isclose
 from Pmw import initialise, Balloon
 import warnings
 

@@ -10,14 +10,10 @@ from mpl_toolkits.axes_grid1 import make_axes_locatable
 from matplotlib.lines import Line2D
 from matplotlib.colors import is_color_like
 from matplotlib.backends.backend_tkagg import FigureCanvasTkAgg, NavigationToolbar2Tk
-from mpl_toolkits.mplot3d.art3d import Poly3DCollection
 from tkinter import Tk, Toplevel, Frame, Button, Label, filedialog, messagebox, PhotoImage, simpledialog, Entry
 from os import path, makedirs, getcwd
-from obspy import read
-from obspy.signal.filter import lowpass, highpass
-from scipy.signal import resample
 from scipy.interpolate import interp1d,griddata
-from numpy import array, where, polyfit, linspace, meshgrid, column_stack, c_, savetxt, shape,reshape,concatenate, hstack, linalg, mean, sqrt, zeros, arange, linspace, square, sort, unique
+from numpy import array, where, linspace, meshgrid, column_stack, c_, savetxt, shape,reshape,concatenate, hstack, linalg, mean, sqrt, zeros, linspace, square
 from numpy import all as np_all
 from Pmw import initialise, Balloon
 import pygimli as pg
