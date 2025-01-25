@@ -1847,7 +1847,4 @@ E-mail: vjs279@hotmail.com
                     
                 self.velMode = False
                 self.statusLabel.configure(text="Apparent velocity mode disabled!",font=("Arial", 11))
-                messagebox.showinfo(title="Refrapick", message="Apparent velocity mode disabled!")
-    
-app = Refrapick()
-app.mainloop()
+                messagebox.showinfo(title="Refrapick", message="Apparent velocity mode disabled!")  
