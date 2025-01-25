@@ -1823,6 +1823,3 @@ E-mail: vjs279@hotmail.com
         Button(plotOptionsWindow,text="Change traveltimes line color", command = dataLinesColor, width = 30).grid(row = 10, column = 0,pady=5,padx=65)
         
         plotOptionsWindow.tkraise()
-        
-app = Refrainv()
-app.mainloop()
