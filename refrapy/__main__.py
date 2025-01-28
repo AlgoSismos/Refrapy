@@ -1,6 +1,6 @@
 import sys
-from refrapick import Refrapick
-from refrainv import Refrainv
+from refrapy.refrapick import Refrapick
+from refrapy.refrainv import Refrainv
 
 def main():
 
