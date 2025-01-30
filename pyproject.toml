@@ -1,14 +1,10 @@
-[build-system]
-requires = ["setuptools>=75.0"]
-build-backend = "setuptools.build_meta"
-
 [project]
 name = "refrapy"
 version = "0.2.1"
 description = "Refrapy is a Python software package with a graphical interface for seismic refraction data analysis."
 readme = "README.md"
 license = {file = "LICENSE"}
-requires-python = ">=3.9"
+requires-python = ">=3.9,<3.13"
 keywords = ["seismic refraction", "geophysics",]
 authors = [
   { name = "Victor Guedes", email = "vjs279@hotmail.com"},
@@ -32,3 +28,6 @@ refrapy = "refrapy.__main__:main"
 [project.urls]
 Source = "https://github.com/AlgoSismos/Refrapy"
 
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
