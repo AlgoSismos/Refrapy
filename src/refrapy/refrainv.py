@@ -39,7 +39,7 @@ class Refrainv(Tk):
         frame_toolbar = Frame(self)
         frame_toolbar.grid(row=0,column=0,sticky="EW")
         
-        photo = PhotoImage(file="%s/src/refrapy/images/ico_refrapy.gif"%self.package_dir)
+        photo = PhotoImage(file=str(self.image_path / 'ico_refrapy.gif'))
         labelPhoto = Label(frame_toolbar, image = photo, width = 151)
         labelPhoto.image = photo
         labelPhoto.grid(row=0, column =0, sticky="W")
@@ -48,24 +48,24 @@ class Refrainv(Tk):
 
         initialise(self)
 
-        self.ico_newProject = PhotoImage(file="%s/src/refrapy/images/ico_newProject.gif"%self.package_dir)
-        self.ico_loadProject = PhotoImage(file="%s/src/refrapy/images/ico_loadProject.gif"%self.package_dir)
-        self.ico_openPick = PhotoImage(file="%s/src/refrapy/images/ico_loadPicks.gif"%self.package_dir)
-        self.ico_invTimeterms = PhotoImage(file="%s/src/refrapy/images/vm.gif"%self.package_dir)
-        self.ico_invTomo = PhotoImage(file="%s/src/refrapy/images/tomogram.gif"%self.package_dir)
-        self.ico_layerMode = PhotoImage(file="%s/src/refrapy/images/camadas.gif"%self.package_dir)
-        self.ico_clearLayers = PhotoImage(file="%s/src/refrapy/images/limpar.gif"%self.package_dir)
-        self.ico_layer1 = PhotoImage(file="%s/src/refrapy/images/layer1.gif"%self.package_dir)
-        self.ico_layer2 = PhotoImage(file="%s/src/refrapy/images/layer2.gif"%self.package_dir)
-        self.ico_layer3 = PhotoImage(file="%s/src/refrapy/images/layer3.gif"%self.package_dir)
-        self.ico_reset = PhotoImage(file="%s/src/refrapy/images/fechar.gif"%self.package_dir)
-        self.ico_plotOptions = PhotoImage(file="%s/src/refrapy/images/ico_plotOptions.gif"%self.package_dir)
-        self.ico_save = PhotoImage(file="%s/src/refrapy/images/salvar.gif"%self.package_dir)
-        self.ico_fit = PhotoImage(file="%s/src/refrapy/images/ico_fit.gif"%self.package_dir)
-        self.ico_mergeResults = PhotoImage(file="%s/src/refrapy/images/ico_mergeResults.gif"%self.package_dir)
-        self.ico_velmesh = PhotoImage(file="%s/src/refrapy/images/ico_velmesh.gif"%self.package_dir)
-        self.ico_3d = PhotoImage(file="%s/src/refrapy/images/ico_3d.gif"%self.package_dir)
-        self.ico_help = PhotoImage(file="%s/src/refrapy/images/ico_help.gif"%self.package_dir)
+        self.ico_newProject = PhotoImage(file=str(self.image_path / 'ico_newProject.gif'))        
+        self.ico_loadProject = PhotoImage(file=str(self.image_path / 'ico_loadProject.gif'))
+        self.ico_openPick = PhotoImage(file=str(self.image_path / 'ico_loadPicks.gif'))
+        self.ico_invTimeterms = PhotoImage(file=str(self.image_path / 'vm.gif'))
+        self.ico_invTomo = PhotoImage(file=str(self.image_path / 'tomogram.gif'))
+        self.ico_layerMode = PhotoImage(file=str(self.image_path / 'camadas.gif'))
+        self.ico_clearLayers = PhotoImage(file=str(self.image_path / 'limpar.gif'))
+        self.ico_layer1 = PhotoImage(file=str(self.image_path / 'layer1.gif'))
+        self.ico_layer2 = PhotoImage(file=str(self.image_path / 'layer2.gif'))
+        self.ico_layer3 = PhotoImage(file=str(self.image_path / 'layer3.gif'))
+        self.ico_reset = PhotoImage(file=str(self.image_path / 'fechar.gif'))
+        self.ico_plotOptions = PhotoImage(file=str(self.image_path / 'ico_plotOptions.gif'))
+        self.ico_save = PhotoImage(file=str(self.image_path / 'salvar.gif'))
+        self.ico_fit = PhotoImage(file=str(self.image_path / 'ico_fit.gif'))
+        self.ico_mergeResults = PhotoImage(file=str(self.image_path / 'ico_mergeResults.gif'))
+        self.ico_velmesh = PhotoImage(file=str(self.image_path / 'ico_velmesh.gif'))
+        self.ico_3d = PhotoImage(file=str(self.image_path / 'ico_3d.gif'))
+        self.ico_help = PhotoImage(file=str(self.image_path / 'ico_help.gif'))
 
         bt = Button(frame_toolbar,image = self.ico_newProject,command = self.createProject,width=25)
         bt.grid(row = 0, column = 1, sticky="W")
@@ -167,8 +167,7 @@ class Refrainv(Tk):
         helpWindow.configure(bg = "#F0F0F0")
         helpWindow.resizable(0,0)
 
-        # helpWindow.iconbitmap("%s/src/refrapy/images/ico_refrapy.png"%self.package_dir)
-        helpWindow.iconphoto(False,PhotoImage("%s/src/refrapy/images/ico_refrapy.png"%self.package_dir))
+        helpWindow.iconphoto(False,PhotoImage(file=str(self.image_path / 'ico_refrapy.png')))
 
         Label(helpWindow, text = """Refrapy - Refrainv v2.0.0
 
