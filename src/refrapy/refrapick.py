@@ -1,7 +1,6 @@
-##Refrapy - Seismic Refraction Data Analysis
-##Refrapick - First-break picking
-##Author: Victor Guedes, MSc
-##E-mail: vjs279@hotmail.com
+"""Refrapy - Seismic Refraction Data Analysis
+Refrapick - First-break picking
+"""
 
 from matplotlib import pyplot as plt
 from matplotlib.backends.backend_tkagg import FigureCanvasTkAgg, NavigationToolbar2Tk

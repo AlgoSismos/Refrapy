@@ -1,7 +1,6 @@
-##Refrapy - Seismic Refraction Data Analysis
-##Refrainv - Data inversion
-##Author: Victor Guedes, MSc
-##E-mail: vjs279@hotmail.com
+"""Refrapy - Seismic Refraction Data Analysis
+Refrainv - Data inversion
+"""
 
 from matplotlib import pyplot as plt
 from matplotlib.path import Path
