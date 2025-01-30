@@ -24,17 +24,20 @@ class Refrainv(Tk):
     def __init__(self):
         
         super().__init__()
+
         self.geometry("1600x900")
         self.title('Refrapy - Refrainv v2.0.0')
         self.configure(bg = "#F0F0F0")
-        self.resizable(0,0)        
-        icon = PhotoImage("%s/src/refrapy/images/ico_refrapy.ico"%getcwd())
-        self.iconphoto(False,icon)
+        self.resizable(0,0)
+
+        self.package_dir = getcwd()
+       
+        self.iconphoto(False,PhotoImage("%s/src/refrapy/images/ico_refrapy.png"%self.package_dir))
 
         frame_toolbar = Frame(self)
         frame_toolbar.grid(row=0,column=0,sticky="EW")
         
-        photo = PhotoImage(file="%s/src/refrapy/images/ico_refrapy.gif"%getcwd())
+        photo = PhotoImage(file="%s/src/refrapy/images/ico_refrapy.gif"%self.package_dir)
         labelPhoto = Label(frame_toolbar, image = photo, width = 151)
         labelPhoto.image = photo
         labelPhoto.grid(row=0, column =0, sticky="W")
@@ -43,24 +46,24 @@ class Refrainv(Tk):
 
         initialise(self)
 
-        self.ico_newProject = PhotoImage(file="%s/src/refrapy/images/ico_newProject.gif"%getcwd())
-        self.ico_loadProject = PhotoImage(file="%s/src/refrapy/images/ico_loadProject.gif"%getcwd())
-        self.ico_openPick = PhotoImage(file="%s/src/refrapy/images/ico_loadPicks.gif"%getcwd())
-        self.ico_invTimeterms = PhotoImage(file="%s/src/refrapy/images/vm.gif"%getcwd())
-        self.ico_invTomo = PhotoImage(file="%s/src/refrapy/images/tomogram.gif"%getcwd())
-        self.ico_layerMode = PhotoImage(file="%s/src/refrapy/images/camadas.gif"%getcwd())
-        self.ico_clearLayers = PhotoImage(file="%s/src/refrapy/images/limpar.gif"%getcwd())
-        self.ico_layer1 = PhotoImage(file="%s/src/refrapy/images/layer1.gif"%getcwd())
-        self.ico_layer2 = PhotoImage(file="%s/src/refrapy/images/layer2.gif"%getcwd())
-        self.ico_layer3 = PhotoImage(file="%s/src/refrapy/images/layer3.gif"%getcwd())
-        self.ico_reset = PhotoImage(file="%s/src/refrapy/images/fechar.gif"%getcwd())
-        self.ico_plotOptions = PhotoImage(file="%s/src/refrapy/images/ico_plotOptions.gif"%getcwd())
-        self.ico_save = PhotoImage(file="%s/src/refrapy/images/salvar.gif"%getcwd())
-        self.ico_fit = PhotoImage(file="%s/src/refrapy/images/ico_fit.gif"%getcwd())
-        self.ico_mergeResults = PhotoImage(file="%s/src/refrapy/images/ico_mergeResults.gif"%getcwd())
-        self.ico_velmesh = PhotoImage(file="%s/src/refrapy/images/ico_velmesh.gif"%getcwd())
-        self.ico_3d = PhotoImage(file="%s/src/refrapy/images/ico_3d.gif"%getcwd())
-        self.ico_help = PhotoImage(file="%s/src/refrapy/images/ico_help.gif"%getcwd())
+        self.ico_newProject = PhotoImage(file="%s/src/refrapy/images/ico_newProject.gif"%self.package_dir)
+        self.ico_loadProject = PhotoImage(file="%s/src/refrapy/images/ico_loadProject.gif"%self.package_dir)
+        self.ico_openPick = PhotoImage(file="%s/src/refrapy/images/ico_loadPicks.gif"%self.package_dir)
+        self.ico_invTimeterms = PhotoImage(file="%s/src/refrapy/images/vm.gif"%self.package_dir)
+        self.ico_invTomo = PhotoImage(file="%s/src/refrapy/images/tomogram.gif"%self.package_dir)
+        self.ico_layerMode = PhotoImage(file="%s/src/refrapy/images/camadas.gif"%self.package_dir)
+        self.ico_clearLayers = PhotoImage(file="%s/src/refrapy/images/limpar.gif"%self.package_dir)
+        self.ico_layer1 = PhotoImage(file="%s/src/refrapy/images/layer1.gif"%self.package_dir)
+        self.ico_layer2 = PhotoImage(file="%s/src/refrapy/images/layer2.gif"%self.package_dir)
+        self.ico_layer3 = PhotoImage(file="%s/src/refrapy/images/layer3.gif"%self.package_dir)
+        self.ico_reset = PhotoImage(file="%s/src/refrapy/images/fechar.gif"%self.package_dir)
+        self.ico_plotOptions = PhotoImage(file="%s/src/refrapy/images/ico_plotOptions.gif"%self.package_dir)
+        self.ico_save = PhotoImage(file="%s/src/refrapy/images/salvar.gif"%self.package_dir)
+        self.ico_fit = PhotoImage(file="%s/src/refrapy/images/ico_fit.gif"%self.package_dir)
+        self.ico_mergeResults = PhotoImage(file="%s/src/refrapy/images/ico_mergeResults.gif"%self.package_dir)
+        self.ico_velmesh = PhotoImage(file="%s/src/refrapy/images/ico_velmesh.gif"%self.package_dir)
+        self.ico_3d = PhotoImage(file="%s/src/refrapy/images/ico_3d.gif"%self.package_dir)
+        self.ico_help = PhotoImage(file="%s/src/refrapy/images/ico_help.gif"%self.package_dir)
 
         bt = Button(frame_toolbar,image = self.ico_newProject,command = self.createProject,width=25)
         bt.grid(row = 0, column = 1, sticky="W")
@@ -161,7 +164,9 @@ class Refrainv(Tk):
         helpWindow.title('Refrapick - Help')
         helpWindow.configure(bg = "#F0F0F0")
         helpWindow.resizable(0,0)
-        helpWindow.iconbitmap("%s/src/refrapy/images/ico_refrapy.ico"%getcwd())
+
+        # helpWindow.iconbitmap("%s/src/refrapy/images/ico_refrapy.png"%self.package_dir)
+        helpWindow.iconphoto(False,PhotoImage("%s/src/refrapy/images/ico_refrapy.png"%self.package_dir))
 
         Label(helpWindow, text = """Refrapy - Refrainv v2.0.0
 
@@ -932,7 +937,7 @@ E-mail: vjs279@hotmail.com
             tomoWindow.configure(bg = "#F0F0F0")
             tomoWindow.geometry("300x640")
             tomoWindow.resizable(0,0)
-            tomoWindow.iconbitmap("%s/src/refrapy/images/ico_refrapy.ico"%getcwd())
+            tomoWindow.iconbitmap("%s/src/refrapy/images/ico_refrapy.ico"%self.package_dir)
 
             def viewMesh():
 
@@ -946,7 +951,7 @@ E-mail: vjs279@hotmail.com
                 meshWindow.configure(bg = "#F0F0F0")
                 #meshWindow.geometry("1024x768")
                 meshWindow.resizable(0,0)
-                meshWindow.iconbitmap("%s/src/refrapy/images/ico_refrapy.ico"%getcwd())
+                meshWindow.iconbitmap("%s/src/refrapy/images/ico_refrapy.ico"%self.package_dir)
 
                 frame = Frame(meshWindow)
                 frame.grid(row = 0, column = 0)
@@ -1263,7 +1268,7 @@ E-mail: vjs279@hotmail.com
             fitWindow.title('Refrainv - Fit')
             fitWindow.configure(bg = "#F0F0F0")
             fitWindow.resizable(0,0)
-            fitWindow.iconbitmap("%s/src/refrapy/images/ico_refrapy.ico"%getcwd())
+            fitWindow.iconbitmap("%s/src/refrapy/images/ico_refrapy.ico"%self.package_dir)
 
             frame1 = Frame(fitWindow)
             frame1.grid(row = 0, column = 0)
@@ -1346,7 +1351,7 @@ E-mail: vjs279@hotmail.com
             pgWindow.title('Refrainv - Velocity model with mesh')
             pgWindow.configure(bg = "#F0F0F0")
             pgWindow.resizable(0,0)
-            pgWindow.iconbitmap("%s/src/refrapy/images/ico_refrapy.ico"%getcwd())
+            pgWindow.iconbitmap("%s/src/refrapy/images/ico_refrapy.ico"%self.package_dir)
 
             frame = Frame(pgWindow)
             frame.grid(row = 0, column = 0)
@@ -1428,7 +1433,7 @@ E-mail: vjs279@hotmail.com
                 plot3dwindow.configure(bg = "#F0F0F0")
                 plot3dwindow.geometry("1600x900")
                 plot3dwindow.resizable(0,0)
-                plot3dwindow.iconbitmap("%s/src/refrapy/images/ico_refrapy.ico"%getcwd())
+                plot3dwindow.iconbitmap("%s/src/refrapy/images/ico_refrapy.ico"%self.package_dir)
 
                 frame_buttons = Frame(plot3dwindow)
                 frame_buttons.grid(row = 0, column = 0, columnspan=100,sticky="W")
@@ -1805,7 +1810,7 @@ E-mail: vjs279@hotmail.com
         plotOptionsWindow.configure(bg = "#F0F0F0")
         plotOptionsWindow.geometry("350x450")
         plotOptionsWindow.resizable(0,0)
-        plotOptionsWindow.iconbitmap("%s/src/refrapy/images/ico_refrapy.ico"%getcwd())
+        plotOptionsWindow.iconbitmap("%s/src/refrapy/images/ico_refrapy.ico"%self.package_dir)
         Label(plotOptionsWindow, text = "Plot options",font=("Arial", 11)).grid(row=0,column=0,sticky="EW",pady=5,padx=65)
         Button(plotOptionsWindow,text="Show/hide ray path", command = rayPath, width = 30).grid(row = 1, column = 0,pady=5,padx=65)
         Button(plotOptionsWindow,text="Change ray path line color", command = rayPathLineColor, width = 30).grid(row = 2, column = 0,pady=5,padx=65)
