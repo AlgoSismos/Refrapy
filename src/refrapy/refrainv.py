@@ -3,8 +3,6 @@ Refrainv - Data inversion
 """
 
 from matplotlib import pyplot as plt
-from matplotlib.path import Path
-from matplotlib.patches import PathPatch
 from mpl_toolkits.axes_grid1 import make_axes_locatable
 from matplotlib.lines import Line2D
 from matplotlib.colors import is_color_like
@@ -1019,6 +1017,8 @@ E-mail: vjs279@hotmail.com
                 plotContourModel()
 
             def plotContourModel():
+                from matplotlib.path import Path
+                from matplotlib.patches import PathPatch
    
                 xzv = column_stack((self.mgr.paraDomain.cellCenters(), self.mgr.model))
                 x = (xzv[:,0])
