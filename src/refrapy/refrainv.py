@@ -12,6 +12,7 @@ from matplotlib.colors import is_color_like
 from matplotlib.backends.backend_tkagg import FigureCanvasTkAgg, NavigationToolbar2Tk
 from tkinter import Tk, Toplevel, Frame, Button, Label, filedialog, messagebox, PhotoImage, simpledialog, Entry
 from os import path, makedirs, getcwd
+import pathlib
 from scipy.interpolate import interp1d,griddata
 from numpy import array, where, linspace, meshgrid, column_stack, c_, savetxt, shape,reshape,concatenate, hstack, linalg, mean, sqrt, zeros, linspace, square
 from numpy import all as np_all
@@ -31,8 +32,9 @@ class Refrainv(Tk):
         self.resizable(0,0)
 
         self.package_dir = getcwd()
-       
-        self.iconphoto(False,PhotoImage("%s/src/refrapy/images/ico_refrapy.png"%self.package_dir))
+        self.image_path = pathlib.Path(__file__).parent / 'images/'
+     
+        self.iconphoto(False,PhotoImage(file=str(self.image_path / 'ico_refrapy.png')))
 
         frame_toolbar = Frame(self)
         frame_toolbar.grid(row=0,column=0,sticky="EW")
