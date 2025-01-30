@@ -8,8 +8,9 @@ from matplotlib.lines import Line2D
 from matplotlib.colors import is_color_like
 from matplotlib.backends.backend_tkagg import FigureCanvasTkAgg, NavigationToolbar2Tk
 from tkinter import Tk, Toplevel, Frame, Button, Label, filedialog, messagebox, PhotoImage, simpledialog, Entry
-from os import path, makedirs
-import pathlib
+from os.path import exists
+from os import makedirs
+from pathlib import Path
 from scipy.interpolate import interp1d,griddata
 from numpy import array, where, linspace, meshgrid, column_stack, c_, savetxt, shape,reshape,concatenate, hstack, linalg, mean, sqrt, zeros, linspace, square
 from numpy import all as np_all
@@ -28,7 +29,7 @@ class Refrainv(Tk):
         self.configure(bg = "#F0F0F0")
         self.resizable(0,0)
 
-        self.image_path = pathlib.Path(__file__).parent / 'images/'
+        self.image_path = Path(__file__).parent / 'images/'
      
         self.iconphoto(False,PhotoImage(file=str(self.image_path / 'ico_refrapy.png')))
 
@@ -397,7 +398,7 @@ E-mail: vjs279@hotmail.com
             
             projName = simpledialog.askstring("Refrainv","Enter the name of the project to be created:")
             
-            if not path.exists(self.projPath+"/"+projName):
+            if not exists(self.projPath+"/"+projName):
                 
                 makedirs(self.projPath+"/"+projName)
                 local = self.projPath+"/"+projName+"/"
@@ -425,10 +426,10 @@ E-mail: vjs279@hotmail.com
         
         if self.projPath:
             
-            if path.exists(self.projPath+"/"+"data") and \
-            path.exists(self.projPath+"/"+"picks") and \
-            path.exists(self.projPath+"/"+"models") and \
-            path.exists(self.projPath+"/"+"gps"):
+            if exists(self.projPath+"/"+"data") and \
+            exists(self.projPath+"/"+"picks") and \
+            exists(self.projPath+"/"+"models") and \
+            exists(self.projPath+"/"+"gps"):
 
                 self.p_data = self.projPath+"/"+"data/"
                 self.p_picks = self.projPath+"/"+"picks/"
