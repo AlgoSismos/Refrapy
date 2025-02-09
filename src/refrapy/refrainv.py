@@ -29,17 +29,17 @@ class Refrainv(Tk):
         self.configure(bg = "#F0F0F0")
         self.resizable(0,0)
 
-        self.image_path = Path(__file__).parent / 'images/'
-     
+        self.image_path = Path(__file__).parent / 'images/'     
         self.iconphoto(False,PhotoImage(file=str(self.image_path / 'ico_refrapy.png')))
 
         frame_toolbar = Frame(self)
         frame_toolbar.grid(row=0,column=0,sticky="EW")
         
         photo = PhotoImage(file=str(self.image_path / 'ico_refrapy.gif'))
-        labelPhoto = Label(frame_toolbar, image = photo, width = 151)
+        labelPhoto = Label(frame_toolbar, image = photo)
         labelPhoto.image = photo
         labelPhoto.grid(row=0, column =0, sticky="W")
+        
         self.statusLabel = Label(frame_toolbar, text = "Create or load a project to start", font=("Arial", 11))
         self.statusLabel.grid(row = 0, column = 19, sticky = "W")
 
