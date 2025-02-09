@@ -10,6 +10,7 @@ from tkinter import Tk, Toplevel, Frame, Button, Label, filedialog, messagebox, 
 from os import path, makedirs, getcwd
 from obspy import read
 from obspy.signal.filter import lowpass, highpass
+from pathlib import Path
 from scipy.signal import resample
 from scipy.interpolate import interp1d
 from numpy import array, polyfit, isclose
@@ -28,15 +29,17 @@ class Refrapick(Tk):
         self.configure(bg = "#F0F0F0")
         self.resizable(0,0)
 
+        self.image_path = Path(__file__).parent / 'images/'     
+        self.iconphoto(False,PhotoImage(file=str(self.image_path / 'ico_refrapy.png')))
+
         frame_toolbar = Frame(self)
         frame_toolbar.grid(row=0,column=0,sticky="WE")
 
-        icon = PhotoImage("%s/src/refrapy/images/ico_refrapy.ico"%getcwd())
-        self.iconphoto(False,icon)
         photo = PhotoImage(file="%s/src/refrapy/images/ico_refrapy.gif"%getcwd())
         labelPhoto = Label(frame_toolbar, image = photo, width = 151)
         labelPhoto.image = photo
         labelPhoto.grid(row=0, column =0, sticky="W")
+        
         self.statusLabel = Label(frame_toolbar, text = "Create or load a project to start", font=("Arial", 11))
         self.statusLabel.grid(row = 0, column = 33, sticky = "W")
         initialise(self)
