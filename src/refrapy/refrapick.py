@@ -7,7 +7,8 @@ from matplotlib.backends.backend_tkagg import FigureCanvasTkAgg, NavigationToolb
 from matplotlib.colors import is_color_like
 from matplotlib import lines, markers
 from tkinter import Tk, Toplevel, Frame, Button, Label, filedialog, messagebox, PhotoImage, simpledialog
-from os import path, makedirs
+from os.path import exists
+from os import makedirs
 from obspy import read
 from obspy.signal.filter import lowpass, highpass
 from pathlib import Path
@@ -798,7 +799,7 @@ class Refrapick(Tk):
             
             projName = simpledialog.askstring("Refrapick","Enter the name of the project to be created:")
             
-            if not path.exists(self.projPath+"/"+projName):
+            if not exists(self.projPath+"/"+projName):
                 
                 makedirs(self.projPath+"/"+projName)
                 local = self.projPath+"/"+projName+"/"
@@ -825,10 +826,10 @@ class Refrapick(Tk):
         
         if self.projPath:
             
-            if path.exists(self.projPath+"/"+"data") and \
-            path.exists(self.projPath+"/"+"picks") and \
-            path.exists(self.projPath+"/"+"models") and \
-            path.exists(self.projPath+"/"+"gps"):
+            if exists(self.projPath+"/"+"data") and \
+            exists(self.projPath+"/"+"picks") and \
+            exists(self.projPath+"/"+"models") and \
+            exists(self.projPath+"/"+"gps"):
 
                 self.p_data = self.projPath+"/"+"data/"
                 self.p_picks = self.projPath+"/"+"picks/"
