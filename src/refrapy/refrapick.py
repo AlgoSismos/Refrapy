@@ -7,7 +7,7 @@ from matplotlib.backends.backend_tkagg import FigureCanvasTkAgg, NavigationToolb
 from matplotlib.colors import is_color_like
 from matplotlib import lines, markers
 from tkinter import Tk, Toplevel, Frame, Button, Label, filedialog, messagebox, PhotoImage, simpledialog
-from os import path, makedirs, getcwd
+from os import path, makedirs
 from obspy import read
 from obspy.signal.filter import lowpass, highpass
 from pathlib import Path
@@ -29,7 +29,7 @@ class Refrapick(Tk):
         self.configure(bg = "#F0F0F0")
         self.resizable(0,0)
 
-        self.image_path = Path(__file__).parent / 'images/'     
+        self.image_path = Path(__file__).parent / 'images/'
         self.iconphoto(False,PhotoImage(file=str(self.image_path / 'ico_refrapy.png')))
 
         frame_toolbar = Frame(self)
@@ -43,37 +43,36 @@ class Refrapick(Tk):
         self.statusLabel = Label(frame_toolbar, text = "Create or load a project to start", font=("Arial", 11))
         self.statusLabel.grid(row = 0, column = 33, sticky = "W")
         initialise(self)
-        self.ico_openWaveform = PhotoImage(file="%s/src/refrapy/images/abrir.gif"%getcwd())
-        self.ico_savePicks = PhotoImage(file="%s/src/refrapy/images/salvar.gif"%getcwd())
-        self.ico_nextWf = PhotoImage(file="%s/src/refrapy/images/proximo.gif"%getcwd())
-        self.ico_previousWf = PhotoImage(file="%s/src/refrapy/images/voltar.gif"%getcwd())
-        self.ico_expandY = PhotoImage(file="%s/src/refrapy/images/baixo.gif"%getcwd())
-        self.ico_zoomY = PhotoImage(file="%s/src/refrapy/images/cima.gif"%getcwd())
-        self.ico_moreGain = PhotoImage(file="%s/src/refrapy/images/mais.gif"%getcwd())
-        self.ico_lessGain = PhotoImage(file="%s/src/refrapy/images/menos.gif"%getcwd())
-        self.ico_invertY = PhotoImage(file="%s/src/refrapy/images/invert.gif"%getcwd())
-        self.ico_trim = PhotoImage(file="%s/src/refrapy/images/cortar.gif"%getcwd())
-        self.ico_wiggles = PhotoImage(file="%s/src/refrapy/images/fill_null.gif"%getcwd())
-        self.ico_fillNeg = PhotoImage(file="%s/src/refrapy/images/fill_neg.gif"%getcwd())
-        self.ico_fillPos = PhotoImage(file="%s/src/refrapy/images/fill_pos.gif"%getcwd())
-        self.ico_clip = PhotoImage(file="%s/src/refrapy/images/clip.gif"%getcwd())
-        self.ico_filters = PhotoImage(file="%s/src/refrapy/images/ico_filter.gif"%getcwd())
-        self.ico_pick = PhotoImage(file="%s/src/refrapy/images/pick.gif"%getcwd())
-        self.ico_connectPick = PhotoImage(file="%s/src/refrapy/images/ligar.gif"%getcwd())
-        self.ico_clearPicks = PhotoImage(file="%s/src/refrapy/images/limpar.gif"%getcwd())
-        self.ico_velMode = PhotoImage(file="%s/src/refrapy/images/vel.gif"%getcwd())
-        self.ico_tt = PhotoImage(file="%s/src/refrapy/images/grafico.gif"%getcwd())
-        self.ico_options = PhotoImage(file="%s/src/refrapy/images/opt.gif"%getcwd())
-        self.ico_reset = PhotoImage(file="%s/src/refrapy/images/fechar.gif"%getcwd())
-        self.ico_newProject = PhotoImage(file="%s/src/refrapy/images/ico_newProject.gif"%getcwd())
-        self.ico_loadProject = PhotoImage(file="%s/src/refrapy/images/ico_loadProject.gif"%getcwd())
-        self.ico_resample = PhotoImage(file="%s/src/refrapy/images/ico_resample.gif"%getcwd())
-        self.ico_survey = PhotoImage(file="%s/src/refrapy/images/ico_survey.gif"%getcwd())
-        self.ico_shotTime = PhotoImage(file="%s/src/refrapy/images/ico_shotTime.gif"%getcwd())
-        self.ico_loadPicks = PhotoImage(file="%s/src/refrapy/images/ico_loadPicks.gif"%getcwd())
-        self.ico_allPicks = PhotoImage(file="%s/src/refrapy/images/ico_allPicks.gif"%getcwd())
-        self.ico_restoreTraces = PhotoImage(file="%s/src/refrapy/images/ico_restoreTraces.gif"%getcwd())
-        
+        self.ico_openWaveform = PhotoImage(file=str(self.image_path / 'abrir.gif'))
+        self.ico_savePicks = PhotoImage(file=str(self.image_path / 'salvar.gif'))
+        self.ico_nextWf = PhotoImage(file=str(self.image_path / 'proximo.gif'))
+        self.ico_previousWf = PhotoImage(file=str(self.image_path / 'voltar.gif'))
+        self.ico_expandY = PhotoImage(file=str(self.image_path / 'baixo.gif'))
+        self.ico_zoomY = PhotoImage(file=str(self.image_path / 'cima.gif'))
+        self.ico_moreGain = PhotoImage(file=str(self.image_path / 'mais.gif'))
+        self.ico_lessGain = PhotoImage(file=str(self.image_path / 'menos.gif'))
+        self.ico_invertY = PhotoImage(file=str(self.image_path / 'invert.gif'))
+        self.ico_trim = PhotoImage(file=str(self.image_path / 'cortar.gif'))
+        self.ico_wiggles = PhotoImage(file=str(self.image_path / 'fill_null.gif'))
+        self.ico_fillNeg = PhotoImage(file=str(self.image_path / 'fill_neg.gif'))
+        self.ico_fillPos = PhotoImage(file=str(self.image_path / 'fill_pos.gif'))
+        self.ico_clip = PhotoImage(file=str(self.image_path / 'clip.gif'))
+        self.ico_filters = PhotoImage(file=str(self.image_path / 'ico_filter.gif'))
+        self.ico_pick = PhotoImage(file=str(self.image_path / 'pick.gif'))
+        self.ico_connectPick = PhotoImage(file=str(self.image_path / 'ligar.gif'))
+        self.ico_clearPicks = PhotoImage(file=str(self.image_path / 'limpar.gif'))
+        self.ico_velMode = PhotoImage(file=str(self.image_path / 'vel.gif'))
+        self.ico_tt = PhotoImage(file=str(self.image_path / 'grafico.gif'))
+        self.ico_options = PhotoImage(file=str(self.image_path / 'opt.gif'))
+        self.ico_reset = PhotoImage(file=str(self.image_path / 'fechar.gif'))
+        self.ico_newProject = PhotoImage(file=str(self.image_path / 'ico_newProject.gif'))
+        self.ico_loadProject = PhotoImage(file=str(self.image_path / 'ico_loadProject.gif'))
+        self.ico_resample = PhotoImage(file=str(self.image_path / 'ico_resample.gif'))
+        self.ico_survey = PhotoImage(file=str(self.image_path / 'ico_survey.gif'))
+        self.ico_shotTime = PhotoImage(file=str(self.image_path / 'ico_shotTime.gif'))
+        self.ico_loadPicks = PhotoImage(file=str(self.image_path / 'ico_loadPicks.gif'))
+        self.ico_allPicks = PhotoImage(file=str(self.image_path / 'ico_allPicks.gif'))
+        self.ico_restoreTraces = PhotoImage(file=str(self.image_path / 'ico_restoreTraces.gif'))
         self.ico_help = PhotoImage(file=str(self.image_path / 'ico_help.gif'))
         self.ico_plotOptions = PhotoImage(file=str(self.image_path / 'ico_plotOptions.gif'))        
         
@@ -649,7 +648,9 @@ class Refrapick(Tk):
         plotOptionsWindow.configure(bg = "#F0F0F0")
         plotOptionsWindow.geometry("350x520")
         plotOptionsWindow.resizable(0,0)
-        plotOptionsWindow.iconbitmap("%s/src/refrapy/images/ico_refrapy.ico"%getcwd())
+
+        plotOptionsWindow.iconphoto(False,PhotoImage(file=str(self.image_path / 'ico_refrapy.png')))
+
         Label(plotOptionsWindow, text = "Plot options",font=("Arial", 11)).grid(row=0,column=0,sticky="EW",pady=5,padx=65)
         Button(plotOptionsWindow,text="Change trace color", command = editTraceColor, width = 30).grid(row = 1, column = 0,pady=5,padx=65)
         Button(plotOptionsWindow,text="Change fill color", command = editFillColor, width = 30).grid(row = 2, column = 0,pady=5,padx=65)
@@ -750,7 +751,9 @@ class Refrapick(Tk):
             optionsWindow.configure(bg = "#F0F0F0")
             optionsWindow.geometry("350x170")
             optionsWindow.resizable(0,0)
-            optionsWindow.iconbitmap("%s/src/refrapy/images/ico_refrapy.ico"%getcwd())
+
+            optionsWindow.iconphoto(False,PhotoImage(file=str(self.image_path / 'ico_refrapy.png')))
+
             Label(optionsWindow, text = "Editing parameters in %s"%self.stNames[self.currentSt],font=("Arial", 11)).grid(row=0,column=0,sticky="EW",pady=5,padx=65)
             Button(optionsWindow,text="Edit receiver spacing", command = editdx, width = 30).grid(row = 1, column = 0,pady=5,padx=65)
             Button(optionsWindow,text="Edit first receiver position", command = editx1, width = 30).grid(row = 2, column = 0,pady=5,padx=65)
@@ -967,7 +970,9 @@ class Refrapick(Tk):
         helpWindow.title('Refrapick - Help')
         helpWindow.configure(bg = "#F0F0F0")
         helpWindow.resizable(0,0)
-        helpWindow.iconbitmap("%s/src/refrapy/images/ico_refrapy.ico"%getcwd())
+
+        
+        helpWindow.iconphoto(False,PhotoImage(file=str(self.image_path / 'ico_refrapy.png')))
 
         Label(helpWindow, text = """Refrapy - Refrapick v2.0.0
 
@@ -997,7 +1002,7 @@ E-mail: vjs279@hotmail.com
             surveyWindow.title('Refrapick - View survey')
             surveyWindow.configure(bg = "#F0F0F0")
             surveyWindow.resizable(0,0)
-            surveyWindow.iconbitmap("%s/src/refrapy/images/ico_refrapy.ico"%getcwd())
+            surveyWindow.iconphoto(False,PhotoImage(file=str(self.image_path / 'ico_refrapy.png')))
 
             frame = Frame(surveyWindow, width=20, height=20)
             frame.grid(row = 0, column = 0)
@@ -1726,7 +1731,7 @@ E-mail: vjs279@hotmail.com
                 ttWindow.title('Refrapick - View traveltimes')
                 ttWindow.configure(bg = "#F0F0F0")
                 ttWindow.resizable(0,0)
-                ttWindow.iconbitmap("%s/src/refrapy/images/ico_refrapy.ico"%getcwd())
+                ttWindow.iconphoto(False,PhotoImage(file=str(self.image_path / 'ico_refrapy.png')))
 
                 frame = Frame(ttWindow, width=20, height=20)
                 frame.grid(row = 0, column = 0)
