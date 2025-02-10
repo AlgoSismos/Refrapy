@@ -35,8 +35,8 @@ class Refrapick(Tk):
         frame_toolbar = Frame(self)
         frame_toolbar.grid(row=0,column=0,sticky="WE")
 
-        photo = PhotoImage(file="%s/src/refrapy/images/ico_refrapy.gif"%getcwd())
-        labelPhoto = Label(frame_toolbar, image = photo, width = 151)
+        photo = PhotoImage(file=str(self.image_path / 'ico_refrapy.gif'))
+        labelPhoto = Label(frame_toolbar, image = photo)
         labelPhoto.image = photo
         labelPhoto.grid(row=0, column =0, sticky="W")
         
@@ -73,8 +73,9 @@ class Refrapick(Tk):
         self.ico_loadPicks = PhotoImage(file="%s/src/refrapy/images/ico_loadPicks.gif"%getcwd())
         self.ico_allPicks = PhotoImage(file="%s/src/refrapy/images/ico_allPicks.gif"%getcwd())
         self.ico_restoreTraces = PhotoImage(file="%s/src/refrapy/images/ico_restoreTraces.gif"%getcwd())
-        self.ico_help = PhotoImage(file="%s/src/refrapy/images/ico_help.gif"%getcwd())
-        self.ico_plotOptions = PhotoImage(file="%s/src/refrapy/images/ico_plotOptions.gif"%getcwd())
+        
+        self.ico_help = PhotoImage(file=str(self.image_path / 'ico_help.gif'))
+        self.ico_plotOptions = PhotoImage(file=str(self.image_path / 'ico_plotOptions.gif'))        
         
         bt = Button(frame_toolbar,image = self.ico_newProject,command = self.createProject,width=25)
         bt.grid(row = 0, column = 1, sticky="W")
