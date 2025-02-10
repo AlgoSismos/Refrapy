@@ -45,7 +45,7 @@ class Refrainv(Tk):
 
         initialise(self)
 
-        self.ico_newProject = PhotoImage(file=str(self.image_path / 'ico_newProject.gif'))        
+        self.ico_newProject = PhotoImage(file=str(self.image_path / 'ico_newProject.gif'))
         self.ico_loadProject = PhotoImage(file=str(self.image_path / 'ico_loadProject.gif'))
         self.ico_openPick = PhotoImage(file=str(self.image_path / 'ico_loadPicks.gif'))
         self.ico_invTimeterms = PhotoImage(file=str(self.image_path / 'vm.gif'))
