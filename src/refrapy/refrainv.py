@@ -29,13 +29,13 @@ class Refrainv(Tk):
         self.configure(bg = "#F0F0F0")
         self.resizable(0,0)
 
-        self.image_path = Path(__file__).parent / 'images/'     
-        self.iconphoto(False,PhotoImage(file=str(self.image_path / 'ico_refrapy.png')))
+        self.image_path = Path(__file__).parent / 'images'
+        self.iconphoto(False,PhotoImage(file=self.image_path / 'ico_refrapy.png'))
 
         frame_toolbar = Frame(self)
         frame_toolbar.grid(row=0,column=0,sticky="EW")
         
-        photo = PhotoImage(file=str(self.image_path / 'ico_refrapy.gif'))
+        photo = PhotoImage(file=self.image_path / 'ico_refrapy.gif')
         labelPhoto = Label(frame_toolbar, image = photo)
         labelPhoto.image = photo
         labelPhoto.grid(row=0, column =0, sticky="W")
@@ -45,24 +45,24 @@ class Refrainv(Tk):
 
         initialise(self)
 
-        self.ico_newProject = PhotoImage(file=str(self.image_path / 'ico_newProject.gif'))
-        self.ico_loadProject = PhotoImage(file=str(self.image_path / 'ico_loadProject.gif'))
-        self.ico_openPick = PhotoImage(file=str(self.image_path / 'ico_loadPicks.gif'))
-        self.ico_invTimeterms = PhotoImage(file=str(self.image_path / 'vm.gif'))
-        self.ico_invTomo = PhotoImage(file=str(self.image_path / 'tomogram.gif'))
-        self.ico_layerMode = PhotoImage(file=str(self.image_path / 'camadas.gif'))
-        self.ico_clearLayers = PhotoImage(file=str(self.image_path / 'limpar.gif'))
-        self.ico_layer1 = PhotoImage(file=str(self.image_path / 'layer1.gif'))
-        self.ico_layer2 = PhotoImage(file=str(self.image_path / 'layer2.gif'))
-        self.ico_layer3 = PhotoImage(file=str(self.image_path / 'layer3.gif'))
-        self.ico_reset = PhotoImage(file=str(self.image_path / 'fechar.gif'))
-        self.ico_plotOptions = PhotoImage(file=str(self.image_path / 'ico_plotOptions.gif'))
-        self.ico_save = PhotoImage(file=str(self.image_path / 'salvar.gif'))
-        self.ico_fit = PhotoImage(file=str(self.image_path / 'ico_fit.gif'))
-        self.ico_mergeResults = PhotoImage(file=str(self.image_path / 'ico_mergeResults.gif'))
-        self.ico_velmesh = PhotoImage(file=str(self.image_path / 'ico_velmesh.gif'))
-        self.ico_3d = PhotoImage(file=str(self.image_path / 'ico_3d.gif'))
-        self.ico_help = PhotoImage(file=str(self.image_path / 'ico_help.gif'))
+        self.ico_newProject = PhotoImage(file=self.image_path / 'ico_newProject.gif')
+        self.ico_loadProject = PhotoImage(file=self.image_path / 'ico_loadProject.gif')
+        self.ico_openPick = PhotoImage(file=self.image_path / 'ico_loadPicks.gif')
+        self.ico_invTimeterms = PhotoImage(file=self.image_path / 'vm.gif')
+        self.ico_invTomo = PhotoImage(file=self.image_path / 'tomogram.gif')
+        self.ico_layerMode = PhotoImage(file=self.image_path / 'camadas.gif')
+        self.ico_clearLayers = PhotoImage(file=self.image_path / 'limpar.gif')
+        self.ico_layer1 = PhotoImage(file=self.image_path / 'layer1.gif')
+        self.ico_layer2 = PhotoImage(file=self.image_path / 'layer2.gif')
+        self.ico_layer3 = PhotoImage(file=self.image_path / 'layer3.gif')
+        self.ico_reset = PhotoImage(file=self.image_path / 'fechar.gif')
+        self.ico_plotOptions = PhotoImage(file=self.image_path / 'ico_plotOptions.gif')
+        self.ico_save = PhotoImage(file=self.image_path / 'salvar.gif')
+        self.ico_fit = PhotoImage(file=self.image_path / 'ico_fit.gif')
+        self.ico_mergeResults = PhotoImage(file=self.image_path / 'ico_mergeResults.gif')
+        self.ico_velmesh = PhotoImage(file=self.image_path / 'ico_velmesh.gif')
+        self.ico_3d = PhotoImage(file=self.image_path / 'ico_3d.gif')
+        self.ico_help = PhotoImage(file=self.image_path / 'ico_help.gif')
 
         bt = Button(frame_toolbar,image = self.ico_newProject,command = self.createProject,width=25)
         bt.grid(row = 0, column = 1, sticky="W")
@@ -164,7 +164,7 @@ class Refrainv(Tk):
         helpWindow.configure(bg = "#F0F0F0")
         helpWindow.resizable(0,0)
 
-        helpWindow.iconphoto(False,PhotoImage(file=str(self.image_path / 'ico_refrapy.png')))
+        helpWindow.iconphoto(False,PhotoImage(file=self.image_path / 'ico_refrapy.png'))
 
         Label(helpWindow, text = """Refrapy - Refrainv v2.0.0
 
@@ -935,7 +935,7 @@ E-mail: vjs279@hotmail.com
             tomoWindow.configure(bg = "#F0F0F0")
             tomoWindow.geometry("300x640")
             tomoWindow.resizable(0,0)
-            tomoWindow.iconphoto(False,PhotoImage(file=str(self.image_path / 'ico_refrapy.png')))
+            tomoWindow.iconphoto(False,PhotoImage(file=self.image_path / 'ico_refrapy.png'))
 
             def viewMesh():
 
@@ -949,7 +949,7 @@ E-mail: vjs279@hotmail.com
                 meshWindow.configure(bg = "#F0F0F0")
                 #meshWindow.geometry("1024x768")
                 meshWindow.resizable(0,0)
-                meshWindow.iconphoto(False,PhotoImage(file=str(self.image_path / 'ico_refrapy.png')))
+                meshWindow.iconphoto(False,PhotoImage(file=self.image_path / 'ico_refrapy.png'))
 
                 frame = Frame(meshWindow)
                 frame.grid(row = 0, column = 0)
@@ -1120,7 +1120,8 @@ E-mail: vjs279@hotmail.com
             Label(tomoWindow, text = "Maximum depth (max offset = %.2f m)"%max(offsets)).grid(row=1,column=0,pady=5,sticky="E")
             maxDepth_entry = Entry(tomoWindow,width=6)
             maxDepth_entry.grid(row=1,column=1,pady=5)
-            maxDepth_entry.insert(0, str(max(offsets)/3))#str(max(offsets)*0.4))#str(int((self.gx[-1]-self.gx[0])*0.4)))
+            maxDepth_entry.insert(0, str(max(offsets)/3))
+            #str(max(offsets)*0.4))#str(int((self.gx[-1]-self.gx[0])*0.4)))
 
             Label(tomoWindow, text = "# of nodes between receivers").grid(row=2,column=0,pady=5,sticky="E")
             paraDX_entry = Entry(tomoWindow,width=6)
@@ -1268,7 +1269,7 @@ E-mail: vjs279@hotmail.com
             fitWindow.title('Refrainv - Fit')
             fitWindow.configure(bg = "#F0F0F0")
             fitWindow.resizable(0,0)
-            fitWindow.iconphoto(False,PhotoImage(file=str(self.image_path / 'ico_refrapy.png')))
+            fitWindow.iconphoto(False,PhotoImage(file=self.image_path / 'ico_refrapy.png'))
 
             frame1 = Frame(fitWindow)
             frame1.grid(row = 0, column = 0)
@@ -1351,7 +1352,7 @@ E-mail: vjs279@hotmail.com
             pgWindow.title('Refrainv - Velocity model with mesh')
             pgWindow.configure(bg = "#F0F0F0")
             pgWindow.resizable(0,0)
-            pgWindow.iconphoto(False,PhotoImage(file=str(self.image_path / 'ico_refrapy.png')))
+            pgWindow.iconphoto(False,PhotoImage(file=self.image_path / 'ico_refrapy.png'))
 
             frame = Frame(pgWindow)
             frame.grid(row = 0, column = 0)
@@ -1433,7 +1434,7 @@ E-mail: vjs279@hotmail.com
                 plot3dwindow.configure(bg = "#F0F0F0")
                 plot3dwindow.geometry("1600x900")
                 plot3dwindow.resizable(0,0)
-                plot3dwindow.iconphoto(False,PhotoImage(file=str(self.image_path / 'ico_refrapy.png')))
+                plot3dwindow.iconphoto(False,PhotoImage(file=self.image_path / 'ico_refrapy.png'))
 
                 frame_buttons = Frame(plot3dwindow)
                 frame_buttons.grid(row = 0, column = 0, columnspan=100,sticky="W")
@@ -1810,7 +1811,7 @@ E-mail: vjs279@hotmail.com
         plotOptionsWindow.configure(bg = "#F0F0F0")
         plotOptionsWindow.geometry("350x450")
         plotOptionsWindow.resizable(0,0)
-        plotOptionsWindow.iconphoto(False,PhotoImage(file=str(self.image_path / 'ico_refrapy.png')))
+        plotOptionsWindow.iconphoto(False,PhotoImage(file=self.image_path / 'ico_refrapy.png'))
         Label(plotOptionsWindow, text = "Plot options",font=("Arial", 11)).grid(row=0,column=0,sticky="EW",pady=5,padx=65)
         Button(plotOptionsWindow,text="Show/hide ray path", command = rayPath, width = 30).grid(row = 1, column = 0,pady=5,padx=65)
         Button(plotOptionsWindow,text="Change ray path line color", command = rayPathLineColor, width = 30).grid(row = 2, column = 0,pady=5,padx=65)
