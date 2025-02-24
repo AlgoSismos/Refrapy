@@ -12,7 +12,7 @@ from os.path import exists
 from os import makedirs
 from pathlib import Path
 from scipy.interpolate import interp1d,griddata
-from numpy import array, where, linspace, meshgrid, column_stack, c_, savetxt, shape,reshape,concatenate, hstack, linalg, mean, sqrt, zeros, linspace, square
+from numpy import array, where, meshgrid, column_stack, c_, savetxt, shape,reshape,concatenate, hstack, linalg, mean, sqrt, zeros, linspace, square
 from numpy import all as np_all
 from Pmw import initialise, Balloon
 import pygimli as pg
@@ -448,7 +448,7 @@ E-mail: vjs279@hotmail.com
 
             if self.data_pg:
 
-                if messagebox.askyesno("Refrainv", "Load new data? (all current analysis have to be cleared)"): self.reset();
+                if messagebox.askyesno("Refrainv", "Load new data? (all current analysis have to be cleared)"): self.reset()
 
             if self.data_pg == False:    
                 
