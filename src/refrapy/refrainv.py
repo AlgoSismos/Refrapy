@@ -9,7 +9,7 @@ from matplotlib.colors import is_color_like
 from matplotlib.backends.backend_tkagg import FigureCanvasTkAgg, NavigationToolbar2Tk
 from tkinter import Tk, Toplevel, Frame, Button, Label, filedialog, messagebox, PhotoImage, simpledialog, Entry
 from os.path import exists
-from os import makedirs
+from os import makedirs, path
 from pathlib import Path
 from scipy.interpolate import interp1d,griddata
 from numpy import array, where, meshgrid, column_stack, c_, savetxt, shape,reshape,concatenate, hstack, linalg, mean, sqrt, zeros, linspace, square

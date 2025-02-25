@@ -8,7 +8,7 @@ from matplotlib.colors import is_color_like
 from matplotlib import lines, markers
 from tkinter import Tk, Toplevel, Frame, Button, Label, filedialog, messagebox, PhotoImage, simpledialog
 from os.path import exists
-from os import makedirs
+from os import path, makedirs
 from obspy import read
 from obspy.signal.filter import lowpass, highpass
 from pathlib import Path
