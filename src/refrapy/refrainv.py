@@ -8,8 +8,8 @@ from matplotlib.lines import Line2D
 from matplotlib.colors import is_color_like
 from matplotlib.backends.backend_tkagg import FigureCanvasTkAgg, NavigationToolbar2Tk
 from tkinter import Tk, Toplevel, Frame, Button, Label, filedialog, messagebox, PhotoImage, simpledialog, Entry
-from os.path import exists
-from os import makedirs, path
+from os.path import exists, basename
+from os import makedirs
 from pathlib import Path
 from scipy.interpolate import interp1d,griddata
 from numpy import array, where, meshgrid, column_stack, c_, savetxt, shape,reshape,concatenate, hstack, linalg, mean, sqrt, zeros, linspace, square
@@ -453,7 +453,7 @@ E-mail: vjs279@hotmail.com
             if self.data_pg == False:    
                 
                 pickFile = filedialog.askopenfilename(title='Open', initialdir = self.projPath+"/picks/", filetypes=[('Pick file', '*.sgt')])
-                self.lineName = path.basename(pickFile)[:-4]
+                self.lineName = basename(pickFile)[:-4]
 
                 if pickFile:
 

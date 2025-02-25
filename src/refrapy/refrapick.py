@@ -7,8 +7,8 @@ from matplotlib.backends.backend_tkagg import FigureCanvasTkAgg, NavigationToolb
 from matplotlib.colors import is_color_like
 from matplotlib import lines, markers
 from tkinter import Tk, Toplevel, Frame, Button, Label, filedialog, messagebox, PhotoImage, simpledialog
-from os.path import exists
-from os import path, makedirs
+from os.path import exists, basename
+from os import makedirs
 from obspy import read
 from obspy.signal.filter import lowpass, highpass
 from pathlib import Path
@@ -871,21 +871,21 @@ class Refrapick(Tk):
                         
                     else:
                         
-                        dx = simpledialog.askfloat("Refrapick","Enter the receiver spacing (in meters) for %s:"%path.basename(file))
+                        dx = simpledialog.askfloat("Refrapick","Enter the receiver spacing (in meters) for %s:"%basename(file))
                    
-                        if dx == None or dx <= 0: dx = 1; messagebox.showinfo('Refrapick','No valid dx entered: dx = 1 m will be assigned to %s'%path.basename(file))  
+                        if dx == None or dx <= 0: dx = 1; messagebox.showinfo('Refrapick','No valid dx entered: dx = 1 m will be assigned to %s'%basename(file))  
                             
-                        x1 = simpledialog.askfloat("Refrapick","Enter the first receiver position (in meters) for %s:"%path.basename(file))
+                        x1 = simpledialog.askfloat("Refrapick","Enter the first receiver position (in meters) for %s:"%basename(file))
 
-                        if x1 == None: x1 = 0; messagebox.showinfo('Refrapick','No x1 value entered: x1 = 0 m will be assigned to %s'%path.basename(file))
+                        if x1 == None: x1 = 0; messagebox.showinfo('Refrapick','No x1 value entered: x1 = 0 m will be assigned to %s'%basename(file))
                         
-                        source = simpledialog.askfloat("Refrapick","Enter the source position (in meters) for %s:"%path.basename(file))
+                        source = simpledialog.askfloat("Refrapick","Enter the source position (in meters) for %s:"%basename(file))
 
-                        if source == None: source = -1; messagebox.showinfo('Refrapick','No source value entered: source = -1 m will be assigned to %s'%path.basename(file))
+                        if source == None: source = -1; messagebox.showinfo('Refrapick','No source value entered: source = -1 m will be assigned to %s'%basename(file))
 
-                        delay = simpledialog.askfloat("Refrapick","Enter the delay for shot time correction (in seconds) for %s:"%path.basename(file))
+                        delay = simpledialog.askfloat("Refrapick","Enter the delay for shot time correction (in seconds) for %s:"%basename(file))
 
-                        if delay == None: delay = 0; messagebox.showinfo('Refrapick','No delay time entered: delay = 0 s will be used for %s'%path.basename(file))
+                        if delay == None: delay = 0; messagebox.showinfo('Refrapick','No delay time entered: delay = 0 s will be used for %s'%basename(file))
                         
                         xend = x1+dx*(len(st)-1)
 
@@ -949,8 +949,8 @@ class Refrapick(Tk):
                     ax.set_ylabel("TIME [s]")
                     ax.set_xlabel("RECEIVER POSITION [m]")
                     if self.grid: ax.grid(lw = .5, alpha = .5, c = self.gridColor, ls = self.gridStyle)
-                    ax.set_title(path.basename(file)+" | dx = %.2f m | source = %.2f m | sampling = %d Hz | filters = no"%(dx,source,self.originalSamplingRates[i]))
-                    self.stNames.append(path.basename(file))
+                    ax.set_title(basename(file)+" | dx = %.2f m | source = %.2f m | sampling = %d Hz | filters = no"%(dx,source,self.originalSamplingRates[i]))
+                    self.stNames.append(basename(file))
                     ax.set_ylim(min(tr.times()+delay), max(tr.times()+delay))
                     ax.set_xlim(x1-dx/2, xend+dx/2)
                     ax.invert_yaxis()
