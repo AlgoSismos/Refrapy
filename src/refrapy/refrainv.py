@@ -577,12 +577,8 @@ E-mail: vjs279@hotmail.com
                 rMg = zeros((int(len(layer)), int(len(self.sources) + len(gx) + 1)))
 
                 for i, j in zip(range(shape(rMg)[0]), range(shape(rMg)[1])):
-                    try:
-                        rMg[i][len(self.sources) + j] = w
-                        rMg[i][len(self.sources) + j + 1] = -w
-
-                    except:
-                        pass
+                    rMg[i][len(self.sources) + j] = w
+                    rMg[i][len(self.sources) + j + 1] = -w
 
                 rMg = rMg[~np_all(rMg == 0, axis=1)][:-2]  # regularization matrix of time-terms from geophones
                 rM = concatenate((rMs, rMg))
