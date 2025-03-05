@@ -683,7 +683,7 @@ class Refrapick(Tk):
                     "Refrapick", "Enter the new receiver spacing in meters (for %s):" % self.stNames[self.currentSt]
                 )
 
-                if new_dx != None:
+                if new_dx is not None:
                     if new_dx > 0:
                         if self.xpicks[self.currentSt]:
                             self.clearPicks()
@@ -784,7 +784,7 @@ class Refrapick(Tk):
                     "Refrapick", "Enter the new source position in meters (for %s):" % self.stNames[self.currentSt]
                 )
 
-                if new_source != None:
+                if new_source is not None:
                     self.sources[self.currentSt] = new_source
                     self.updatePlotTitle()
                     messagebox.showinfo(
@@ -930,7 +930,7 @@ class Refrapick(Tk):
                             "Refrapick", "Enter the receiver spacing (in meters) for %s:" % basename(file)
                         )
 
-                        if dx == None or dx <= 0:
+                        if dx is None or dx <= 0:
                             dx = 1
                             messagebox.showinfo(
                                 "Refrapick", "No valid dx entered: dx = 1 m will be assigned to %s" % basename(file)
@@ -940,7 +940,7 @@ class Refrapick(Tk):
                             "Refrapick", "Enter the first receiver position (in meters) for %s:" % basename(file)
                         )
 
-                        if x1 == None:
+                        if x1 is None:
                             x1 = 0
                             messagebox.showinfo(
                                 "Refrapick", "No x1 value entered: x1 = 0 m will be assigned to %s" % basename(file)
@@ -950,7 +950,7 @@ class Refrapick(Tk):
                             "Refrapick", "Enter the source position (in meters) for %s:" % basename(file)
                         )
 
-                        if source == None:
+                        if source is None:
                             source = -1
                             messagebox.showinfo(
                                 "Refrapick",
@@ -962,7 +962,7 @@ class Refrapick(Tk):
                             "Enter the delay for shot time correction (in seconds) for %s:" % basename(file),
                         )
 
-                        if delay == None:
+                        if delay is None:
                             delay = 0
                             messagebox.showinfo(
                                 "Refrapick", "No delay time entered: delay = 0 s will be used for %s" % basename(file)

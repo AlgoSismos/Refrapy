@@ -541,7 +541,7 @@ E-mail: vjs279@hotmail.com
                 "Enter the regularization weight to be used for data inversion or cancel for default (lambda = 0.1)",
             )
 
-            if regw == None:
+            if regw is None:
                 regw = 0.1
 
             gx = list(set(self.gx))
