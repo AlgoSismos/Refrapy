@@ -36,3 +36,6 @@ build-backend = "hatchling.build"
 dev = [
     "ruff>=0.9.7",
 ]
+
+[tool.ruff]
+line-length = 120
