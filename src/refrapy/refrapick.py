@@ -1538,7 +1538,7 @@ E-mail: vjs279@hotmail.com
 
     def pick(self):
         if self.sts:
-            if self.pickMode == False:
+            if self.pickMode is False:
                 if self.velMode:
                     self.appVelMode()
 
@@ -1676,7 +1676,7 @@ E-mail: vjs279@hotmail.com
     def drawPicksLine(self):
         if self.sts:
             if self.xpicks[self.currentSt]:
-                if self.pickLineArts[self.currentSt] == False:
+                if self.pickLineArts[self.currentSt] is False:
                     xinds = array(self.xpicks[self.currentSt]).argsort()
                     sortedx = array(self.xpicks[self.currentSt])[xinds]
                     sortedt = array(self.tpicks[self.currentSt])[xinds]
@@ -1704,7 +1704,7 @@ E-mail: vjs279@hotmail.com
 
             sgx = list(set(allx + self.sources))
 
-            if pickPresent == False:
+            if pickPresent is False:
                 messagebox.showerror(title="Refrapick", message="There are no picks to be exported!")
 
             else:
@@ -1944,7 +1944,7 @@ E-mail: vjs279@hotmail.com
 
     def appVelMode(self):
         if self.sts:
-            if self.velMode == False:
+            if self.velMode is False:
                 if self.pickMode:
                     self.pick()
 

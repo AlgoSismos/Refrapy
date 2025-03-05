@@ -286,7 +286,7 @@ E-mail: vjs279@hotmail.com
 
     def mergeResults(self):
         if self.tomoPlot and self.timetermsPlot:
-            if self.showMerged == False:
+            if self.showMerged is False:
                 if messagebox.askyesno("Refrainv", "Show layer(s) (from time-terms) over tomography model?"):
                     if self.layer2:
                         (self.merged_layer2,) = self.ax_tomography.plot(self.gx_timeterms, self.z_layer2, c="k")
@@ -457,7 +457,7 @@ E-mail: vjs279@hotmail.com
                 if messagebox.askyesno("Refrainv", "Load new data? (all current analysis have to be cleared)"):
                     self.reset()
 
-            if self.data_pg == False:
+            if self.data_pg is False:
                 pickFile = filedialog.askopenfilename(
                     title="Open", initialdir=self.projPath + "/picks/", filetypes=[("Pick file", "*.sgt")]
                 )
@@ -773,7 +773,7 @@ E-mail: vjs279@hotmail.com
 
     def layersInterpretation(self):
         if self.data_pg:
-            if self.layerInterpretationMode == False:
+            if self.layerInterpretationMode is False:
                 self.layerInterpretationMode = True
                 self.statusLabel.configure(text="Layer %d interpratation enabled!" % self.layer2interpretate)
 
@@ -1814,7 +1814,7 @@ E-mail: vjs279@hotmail.com
 
     def plotOptions(self):
         def rayPath():
-            if self.showRayPath == False:
+            if self.showRayPath is False:
                 show = messagebox.askyesno("Refrainv", "Do you want to show the ray path?")
 
                 if show:
@@ -1968,7 +1968,7 @@ E-mail: vjs279@hotmail.com
                 plotOptionsWindow.tkraise()
 
         def geophonePosition():
-            if self.showGeophones == False:
+            if self.showGeophones is False:
                 show = messagebox.askyesno("Refrainv", "Show receivers location on velocity models?")
 
                 if show:
@@ -2008,7 +2008,7 @@ E-mail: vjs279@hotmail.com
                     plotOptionsWindow.tkraise()
 
         def sourcePosition():
-            if self.showSources == False:
+            if self.showSources is False:
                 show = messagebox.askyesno("Refrainv", "Show sources location?")
 
                 if show:
@@ -2056,7 +2056,7 @@ E-mail: vjs279@hotmail.com
 
         def gridLines():
             if self.projReady:
-                if self.showGrid == False:
+                if self.showGrid is False:
                     show = messagebox.askyesno("Refrainv", "Show grid lines?")
 
                     if show:
