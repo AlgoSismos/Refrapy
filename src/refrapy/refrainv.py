@@ -584,7 +584,7 @@ E-mail: vjs279@hotmail.com
                 rM = concatenate((rMs, rMg))
                 rd = hstack((d, [i * 0 for i in range(shape(rM)[0])]))
                 rG = concatenate((G, rM))
-                sol, sse, rank, sv = linalg.lstsq(rG, rd)
+                sol, _, _, _ = linalg.lstsq(rG, rd)
 
                 return sol
 
