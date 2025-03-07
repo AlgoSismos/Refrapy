@@ -1,6 +1,4 @@
-![alt text](https://github.com/viictorjs/Refrapy/blob/master/refrapy_logo.png)
-
-## Summary
+![](src/refrapy/images/refrapy_logo.png)
 
 [Introduction to the software and installation of dependencies](#introduction)
 
