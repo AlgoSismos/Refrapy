@@ -1,29 +1,46 @@
 ![](src/refrapy/images/refrapy_logo.png)
 
-[Introduction to the software and installation of dependencies](#introduction)
+Refrapy is a graphical application for seismic refraction data analysis. It is written in Python and uses 
+libraries from both numerical (numpy and matplotlib) and geophysics (pyGimli and OBSpy) open source communities to 
+provide a visual interface for geophycists analyse seismic refraction data.
 
-[Using Refrapick for first-break picking](#refrapick)
+## Installation
 
-[Using Refrainv to calculate velocity models](#refrainv)
+Before proceeding it should be advised that currently Refrapy only works with python versions from 3.9 to 3.12 
+and that it depends on tkinter, which comes with python (but... is optional dependency in some python distributions).
 
-[Have a question or found a problem?](#reporting-errors-and-asking-questions)
+Below we provide installation methods for a variety of command line tools including: pipx (recommended), 
+pip/venv, uv, and conda.
 
-[Citing Refrapy](#citation)
+### Installing Refrapy with pipx
+```bash
+pipx install git+https://github.com/AlgoSismos/Refrapy
+```
 
-## Introduction
+pipx is a community tool for installing stand-alone python applications from Python Package Index (PYPI). 
+It installs the application in an isolated environment and makes it available in the user space 
+without affecting other environments. 
 
-Refrapy is a Python software package with a graphical interface for seismic refraction data analysis.
+For pipx installation instructions and usage see its [official documentation](https://pipx.pypa.io/stable/docs/).
 
-It is based on two modules: Refrapick and Refrainv.
+### Installing Refrapy with uv
 
-All main dependencies are listed below:
-   ```
-   obspy=1.3.0
-   pygimli=1.2.4
-   numpy=1.19.5
-   scipy=1.8.0
-   matplotlib=3.5.1
-   ```
+For installing Refrapy using uv you must first check which python version is installed on your system.
+Let's suppose that you have python 3.12 installed, then type in your terminal:
+
+```bash
+uv tool install -p 3.12 git+https://github.com/AlgoSismos/Refrapy
+```
+
+So far Refrapy only works with ... under working
+
+
+### Installing Refrapy using pip/env
+
+
+### Installing Refrapy using conda
+
+THE DESCRIPTION BELOW IS OUTDATED:
 
 It is recommended the use of Anaconda (https://www.anaconda.com/), because it simplifies package management.
 Once it is installed, run the following commands on the Anaconda prompt (**tested on Windows 10 system, with Python 3.8.13**):
