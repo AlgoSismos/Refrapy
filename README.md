@@ -39,34 +39,35 @@ Below we indicate a two methods for installing Refrapy inside a virtual environm
 
 ### Installing Refrapy with pip/env
 
-For installing Refrapy inside a virtual environment with this procedure you must create a virtual environment and activate it. To create a virtual environment, in your terminal, run:
+For installing Refrapy inside a virtual environment you must first create it in a folder, by running in your terminal:
 ```bash
 python -m venv env_name
 ```
-where `env_name` is the name of the folder of your environment.
+where `env_name` is the name of the folder containing your environment.
 
-Different procedures are used to activate your environment on Linux and Mac or on Windows. To activate your environment on Linux, run:
+Different procedures are used to activate your environment on Linux and Mac or on Windows. To activate your environment on Linux or Mac, run:
 ```bash
 source env_name/bin/activate
 ```
-On Windows Powershell it *may* be necessary to run the following command on your terminal:
+
+on Windows Powershell run:
+```bash
+env_name\Scripts\Activate.ps1
+```
+and if you receive an error message it [*may* be necessary](https://docs.python.org/3/library/venv.html) to run the following command on your terminal before activating the virtual environment you just created:
 ```
 Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope CurrentUser
 ```
-Then just run:
-```bash
-env_name\bin\Activate.ps1
-```
-A list of activation is scripts can be found on python's [official documentation](https://docs.python.org/3/library/venv.html).
+
+A list of activation scripts can be found on python's [official documentation](https://docs.python.org/3/library/venv.html).
 
 After this you just need to install the package using:
 ```bash
 pip install git+https://github.com/AlgoSismos/Refrapy
 ```
-And do not forget to run `deactivate` when you are done with your work in this environment.
+and do not forget to run `deactivate` when you are done with your work in this environment.
 
-### Installing Refrapy with uv (and creating a virtual environment)
-
+<!-- ### Installing Refrapy with uv (and creating a virtual environment) -->
 
 
 <!-- ### Installing Refrapy using conda
