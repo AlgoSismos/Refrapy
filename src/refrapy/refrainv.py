@@ -2,38 +2,39 @@
 Refrainv - Data inversion
 """
 
-from matplotlib import pyplot as plt
-from mpl_toolkits.axes_grid1 import make_axes_locatable
-from matplotlib.lines import Line2D
-from matplotlib.colors import is_color_like
-from matplotlib.backends.backend_tkagg import FigureCanvasTkAgg, NavigationToolbar2Tk
-from tkinter import Tk, Toplevel, Frame, Button, Label, filedialog, messagebox, PhotoImage, simpledialog, Entry
-from os.path import exists, basename
 from os import makedirs
+from os.path import basename, exists
 from pathlib import Path
-from scipy.interpolate import interp1d, griddata
+from tkinter import Button, Entry, Frame, Label, PhotoImage, Tk, Toplevel, filedialog, messagebox, simpledialog
+
+import pygimli as pg
+from matplotlib import pyplot as plt
+from matplotlib.backends.backend_tkagg import FigureCanvasTkAgg, NavigationToolbar2Tk
+from matplotlib.colors import is_color_like
+from matplotlib.lines import Line2D
+from mpl_toolkits.axes_grid1 import make_axes_locatable
+from numpy import all as np_all
 from numpy import (
     array,
-    where,
-    meshgrid,
-    column_stack,
     c_,
-    savetxt,
-    shape,
-    reshape,
+    column_stack,
     concatenate,
     hstack,
     linalg,
-    mean,
-    sqrt,
-    zeros,
     linspace,
+    mean,
+    meshgrid,
+    reshape,
+    savetxt,
+    shape,
+    sqrt,
     square,
+    where,
+    zeros,
 )
-from numpy import all as np_all
-from Pmw import initialise, Balloon
-import pygimli as pg
+from Pmw import Balloon, initialise
 from pygimli.physics import TravelTimeManager
+from scipy.interpolate import griddata, interp1d
 
 
 class Refrainv(Tk):
@@ -1082,8 +1083,8 @@ E-mail: vjs279@hotmail.com
                 plotContourModel()
 
             def plotContourModel():
-                from matplotlib.path import Path
                 from matplotlib.patches import PathPatch
+                from matplotlib.path import Path
 
                 xzv = column_stack((self.mgr.paraDomain.cellCenters(), self.mgr.model))
                 x = xzv[:, 0]
