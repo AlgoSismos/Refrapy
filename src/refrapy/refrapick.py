@@ -2,21 +2,22 @@
 Refrapick - First-break picking
 """
 
+import warnings
+from os import makedirs
+from os.path import basename, exists
+from pathlib import Path
+from tkinter import Button, Frame, Label, PhotoImage, Tk, Toplevel, filedialog, messagebox, simpledialog
+
+from matplotlib import lines, markers
 from matplotlib import pyplot as plt
 from matplotlib.backends.backend_tkagg import FigureCanvasTkAgg, NavigationToolbar2Tk
 from matplotlib.colors import is_color_like
-from matplotlib import lines, markers
-from tkinter import Tk, Toplevel, Frame, Button, Label, filedialog, messagebox, PhotoImage, simpledialog
-from os.path import exists, basename
-from os import makedirs
+from numpy import array, isclose, polyfit
 from obspy import read
-from obspy.signal.filter import lowpass, highpass
-from pathlib import Path
-from scipy.signal import resample
+from obspy.signal.filter import highpass, lowpass
+from Pmw import Balloon, initialise
 from scipy.interpolate import interp1d
-from numpy import array, polyfit, isclose
-from Pmw import initialise, Balloon
-import warnings
+from scipy.signal import resample
 
 warnings.filterwarnings("ignore")
 
