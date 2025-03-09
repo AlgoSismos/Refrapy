@@ -22,6 +22,11 @@ classifiers = [
 ]
 dependencies = ["obspy>=1.3", "pygimli>=1.2", "numpy>=1.19", "scipy>=1.8.0","Pmw>=2.0"]
 
+[dependency-groups]
+dev = [
+    "ruff>=0.9.7",
+]
+
 [project.scripts]
 refrapy = "refrapy.__main__:main"
 
@@ -32,10 +37,21 @@ Source = "https://github.com/AlgoSismos/Refrapy"
 requires = ["hatchling"]
 build-backend = "hatchling.build"
 
-[dependency-groups]
-dev = [
-    "ruff>=0.9.7",
-]
-
 [tool.ruff]
 line-length = 120
+
+[tool.hatch.build.targets.sdist]
+include = [
+  "*.gif",
+  "*.png",
+  "*.ico",
+  "tests/", # include tests in the source distribution?
+]
+
+[tool.hatch.build.targets.wheel]
+include = [
+  "*.gif",
+  "*.png",
+  "*.ico",
+  "tests/", # include tests in the wheel distribution?
+]
