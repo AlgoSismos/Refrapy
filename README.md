@@ -4,23 +4,21 @@ Refrapy is a graphical application for seismic refraction data analysis. It is w
 open source libraries from numerical and geophysics python communities to 
 provide a visual interface for geophycists analyse seismic refraction data.
 
-## Installation
+# Installation
 
-Before proceeding it should be advised that currently Refrapy only works with python versions from 3.9 to 3.12 
-and that it depends on tkinter, which comes with python but is an optional dependency in some python distributions.
+Before proceeding it should be advised that currently Refrapy only works with python versions from 3.9 to 3.12 and that one that one of this versions should be installed in your system. Besides that, It is also important to mention that Refrapy depends on tkinter (a wrapper around Tcl/Tk GUI framework), and although tkinter comes with python, some  distributions / operational systems consider this package is an optional python package that must be installed independently. Feel free to open an issue if you encounter any issue while installing this package.
 
-Below we provide installation methods for a variety of command line tools including: pipx and uv. 
+## Stand-alone application installs
 
-<!-- , pip/venv, and conda. -->
+Below we provide two installation methods for using Refrapy as a stand-alone application.
 
 ### Installing Refrapy with pipx
 ```bash
 pipx install git+https://github.com/AlgoSismos/Refrapy
 ```
 
-pipx is a community tool for installing stand-alone python applications from Python Package Index (PYPI). 
-It installs the application in an isolated environment and makes it available in the user space 
-without affecting other environments. 
+pipx is a community open source tool for installing stand-alone python applications from Python Package Index (PYPI). It installs the application in an isolated environment and makes it available in the user space 
+without affecting other environments.
 
 For pipx installation instructions and usage see its [official documentation](https://pipx.pypa.io/stable/docs/).
 
@@ -29,6 +27,8 @@ For pipx installation instructions and usage see its [official documentation](ht
 ```bash
 uv tool install --python-preference only-system git+https://github.com/AlgoSismos/Refrapy
 ```
+
+uv is an open source python packaging tool developed by [Astral](https://astral.sh/). For instalation instructions follow the instructions on the official [uv documentation](https://docs.astral.sh/uv/).
 
 <!-- ### Installing Refrapy using pip/env
 
