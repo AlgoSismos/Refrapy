@@ -39,19 +39,3 @@ build-backend = "hatchling.build"
 
 [tool.ruff]
 line-length = 120
-
-[tool.hatch.build.targets.sdist]
-include = [
-  "*.gif",
-  "*.png",
-  "*.ico",
-  "tests/", # include tests in the source distribution?
-]
-
-[tool.hatch.build.targets.wheel]
-include = [
-  "*.gif",
-  "*.png",
-  "*.ico",
-  "tests/", # include tests in the wheel distribution?
-]
