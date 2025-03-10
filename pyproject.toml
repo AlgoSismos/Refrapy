@@ -4,7 +4,7 @@ version = "0.2.1"
 description = "Refrapy is a Python software package with a graphical interface for seismic refraction data analysis."
 readme = "README.md"
 license = {file = "LICENSE"}
-requires-python = ">=3.9,<3.13"
+requires-python = ">=3.10,<3.13"
 keywords = ["seismic refraction", "geophysics",]
 authors = [
   { name = "Victor Guedes", email = "vjs279@hotmail.com"},
