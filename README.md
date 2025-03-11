@@ -14,20 +14,17 @@ Below we provide two installation methods for using Refrapy as a stand-alone app
 
 ### Installing Refrapy with pipx
 ```bash
-pipx install git+https://github.com/AlgoSismos/Refrapy
+pipx install refrapy
 ```
 
-pipx is a community open source tool for installing stand-alone python applications from Python Package Index (PYPI). It installs the application in an isolated environment and makes it available in the user space 
-without affecting other environments.
-
-For pipx installation instructions and usage see its [official documentation](https://pipx.pypa.io/stable/docs/).
+pipx is a community open source tool for installing stand-alone python applications from Python Package Index (PYPI). It installs the application in an isolated environment and makes it available in the user space without affecting other environments. For pipx installation instructions and usage see its [official documentation](https://pipx.pypa.io/stable/docs/).
 
 ### Installing Refrapy with uv
 
 ```bash
-uv tool install --python-preference only-system git+https://github.com/AlgoSismos/Refrapy
+uv tool install --python-preference only-system refrapy
 ```
-uv is an open source python packaging tool developed by [Astral](https://astral.sh/). For instalation instructions follow the instructions on the official [uv documentation](https://docs.astral.sh/uv/).
+uv is an open source python packaging tool developed by [Astral](https://astral.sh/). For instalation instructions follow the instructions in the official [uv documentation](https://docs.astral.sh/uv/).
 
 ## Virtual environment installation (not recommended)
 
@@ -63,7 +60,7 @@ A list of activation scripts can be found on python's [official documentation](h
 
 After this you just need to install the package using:
 ```bash
-pip install git+https://github.com/AlgoSismos/Refrapy
+pip install refrapy
 ```
 and do not forget to run `deactivate` when you are done with your work in this environment.
 
@@ -126,6 +123,9 @@ For usage, follow the instructions on the video below:
 We encourage users to open an issue in this repository when encountering an error or when in doubt about a functionality or any other subject regarding the use of the software.
 
 ## Acknowledgement and citation
+Victor José Cavalcanti Bezerra Guedes
+
+Refrapy was originally developed [Ms. Victor C. B. Guedes](https://github.com/victorjsguedes) under the supervision of [Prof. Susanne Maciel](https://www.linkedin.com/in/susanne-maciel-80a26928/) from University of Brasilia. This project is being hosted on [AlgoSismos](https://github.com/AlgoSismos) and has been packaged by @aureliobarbosa.
 
 If you use Refrapy in your work please cite the following paper:
 
