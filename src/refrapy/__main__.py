@@ -1,17 +1,18 @@
 import sys
 
-from refrapy.refrainv import Refrainv
-from refrapy.refrapick import Refrapick
+from refrapy import Refrainv, Refrapick, __version__
 
 
 def main():
     default_args = ["pick", "inv"]
 
+    print(f"Refrapy - Seismic Refraction Data Analysis\nversion: {__version__}\n")
+
     if len(sys.argv) == 1:
         print(
-            "Refrapy - Seismic Refraction Data Analysis\n"
-            'Refrapy needs an argument. \nCall "refrapy pick" or "refrapy inv"\n'
-            'for using the "pick" or "inv" apps.\n'
+            "Refrapy needs an argument.\n"
+            'Call "refrapy pick" or "refrapy inv"\n'
+            'for using the "Refrapick" or "inv" apps.\n'
         )
         exit()
 
@@ -26,11 +27,7 @@ def main():
         app.mainloop()
 
     else:
-        print(
-            "Refrapy - Seismic Refraction Data Analysis\n"
-            'Wrong usage. Call "refrapy pick" or "refrapy inv"\n'
-            'for using the "pick" or "inv" apps.\n'
-        )
+        print('Wrong usage.\nCall "refrapy pick" or "refrapy inv"\nfor using the "Refrapick" or "Refrainv" apps.\n')
         exit()
 
 

@@ -1,6 +1,6 @@
 [project]
 name = "refrapy"
-version = "0.2.1"
+dynamic = ["version"]
 description = "Refrapy is a Python software package with a graphical interface for seismic refraction data analysis."
 readme = "README.md"
 license = {file = "LICENSE"}
@@ -20,11 +20,19 @@ classifiers = [
   "Intended Audience :: Science/Research", 
   "License :: OSI Approved :: MIT License",
 ]
-dependencies = ["obspy>=1.3", "pygimli>=1.2", "numpy>=1.19", "scipy>=1.8.0","Pmw>=2.0"]
+dependencies = [
+    "obspy>=1.3",
+ "pygimli>=1.2",
+ "numpy>=1.19",
+ "scipy>=1.8.0",
+ "Pmw>=2.0", 
+]
 
 [dependency-groups]
 dev = [
     "ruff>=0.9.7",
+    "hatchling",
+    "hatch-vcs>=0.4.0",    
 ]
 
 [project.scripts]
@@ -34,8 +42,11 @@ refrapy = "refrapy.__main__:main"
 Source = "https://github.com/AlgoSismos/Refrapy"
 
 [build-system]
-requires = ["hatchling"]
+requires = ["hatchling", "hatch-vcs"]
 build-backend = "hatchling.build"
 
 [tool.ruff]
 line-length = 120
+
+[tool.hatch.version]
+source = "vcs"
