@@ -123,7 +123,6 @@ For usage, follow the instructions on the video below:
 We encourage users to open an issue in this repository when encountering an error or when in doubt about a functionality or any other subject regarding the use of the software.
 
 ## Acknowledgement and citation
-Victor José Cavalcanti Bezerra Guedes
 
 Refrapy was originally developed [Ms. Victor C. B. Guedes](https://github.com/victorjsguedes) under the supervision of [Prof. Susanne Maciel](https://www.linkedin.com/in/susanne-maciel-80a26928/) from University of Brasilia. This project is being hosted on [AlgoSismos](https://github.com/AlgoSismos) and has been packaged by @aureliobarbosa.
 
