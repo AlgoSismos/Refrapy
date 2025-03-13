@@ -1,4 +1,4 @@
-![](src/refrapy/images/refrapy_logo.png)
+![REFRAPY LOGO](https://github.com/AlgoSismos/Refrapy/blob/main/src/refrapy/images/refrapy_logo.png)
 
 Refrapy is a graphical application for seismic refraction data analysis. It is written in Python and uses 
 open source libraries from numerical and geophysics python communities to 
@@ -93,7 +93,7 @@ refrapy pick
 ```
 For usage, follow the instructions on the video below:
 
-[![IMAGE ALT TEXT HERE](https://img.youtube.com/vi/3a9eZW4WKjI/0.jpg)](https://www.youtube.com/watch?v=3a9eZW4WKjI)
+[![REFRAINV VIDEO TUTORIAL ON YOUTUBE](https://img.youtube.com/vi/3a9eZW4WKjI/0.jpg)](https://www.youtube.com/watch?v=3a9eZW4WKjI)
 
 
 ### Refrainv
@@ -106,7 +106,7 @@ refrapy inv
 ```
 For usage, follow the instructions on the video below:
 
-[![IMAGE ALT TEXT HERE](https://img.youtube.com/vi/rOJjxoc2cbU/0.jpg)](https://www.youtube.com/watch?v=rOJjxoc2cbU)
+[![REFRAINV VIDEO TUTORIAL ON YOUTUBE](https://img.youtube.com/vi/rOJjxoc2cbU/0.jpg)](https://www.youtube.com/watch?v=rOJjxoc2cbU)
 
 ## Reporting errors and asking questions
 
