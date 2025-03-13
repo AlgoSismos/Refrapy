@@ -92,6 +92,7 @@ For calling Refrapick, on your terminal, call:
 refrapy pick
 ```
 For usage, follow the instructions on the video below:
+
 [![IMAGE ALT TEXT HERE](https://img.youtube.com/vi/3a9eZW4WKjI/0.jpg)](https://www.youtube.com/watch?v=3a9eZW4WKjI)
 
 
@@ -104,6 +105,7 @@ For calling Refrapick, on your terminal, call:
 refrapy inv
 ```
 For usage, follow the instructions on the video below:
+
 [![IMAGE ALT TEXT HERE](https://img.youtube.com/vi/rOJjxoc2cbU/0.jpg)](https://www.youtube.com/watch?v=rOJjxoc2cbU)
 
 ## Reporting errors and asking questions
@@ -112,7 +114,7 @@ We encourage users to open an issue in this repository when encountering an erro
 
 ## Acknowledgement and citation
 
-Refrapy was originally developed [Ms. Victor C. B. Guedes](https://github.com/victorjsguedes) under the supervision of [Prof. Susanne Maciel](https://www.linkedin.com/in/susanne-maciel-80a26928/) from University of Brasilia. This project is being hosted on [AlgoSismos](https://github.com/AlgoSismos) and has been packaged by @aureliobarbosa.
+Refrapy was originally developed [Ms. Victor C. B. Guedes](https://github.com/victorjsguedes) under the supervision of [Prof. Susanne Maciel](https://www.linkedin.com/in/susanne-maciel-80a26928/) from University of Brasilia. This project is being hosted on [AlgoSismos](https://github.com/AlgoSismos) and has been packaged by [Prof. Marco Aurélio Barbosa](https://github.com/aureliobarbosa).
 
 If you use Refrapy in your work please cite the following paper:
 
