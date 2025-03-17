@@ -1,4 +1,4 @@
-![REFRAPY LOGO](https://github.com/AlgoSismos/Refrapy/blob/main/src/refrapy/images/refrapy_logo.png)
+![REFRAPY LOGO](https://raw.githubusercontent.com/AlgoSismos/Refrapy/refs/heads/main/src/refrapy/images/refrapy_logo.png)
 
 Refrapy is a graphical application for seismic refraction data analysis. It is written in Python and uses 
 open source libraries from numerical and geophysics python communities to 
