@@ -582,8 +582,8 @@ E-mail: vjs279@hotmail.com
                         rMg[i][len(self.sources) + j] = w
                         rMg[i][len(self.sources) + j + 1] = -w
 
-                    except:
-                        pass
+                    except IndexError as e: 
+                        print(f"Error: {e}")
 
                 rMg = rMg[~np_all(rMg == 0, axis=1)][:-2]  # regularization matrix of time-terms from geophones
                 rM = concatenate((rMs, rMg))
